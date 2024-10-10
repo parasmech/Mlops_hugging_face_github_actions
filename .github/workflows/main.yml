@@ -18,6 +18,6 @@ jobs:
           HF: ${{ secrets.HF }}
         run: git remote add space https://huggingface.co/spaces/parasmech/Mlops
       - name: Push to hub
-        env:
-          HF: ${{ secrets.HF }}
-        run: git push --force https://huggingface.co/spaces/parasmech/Mlops main
+        run: |
+          git push --force https://USER:${{ secrets.HF }}@huggingface.co/spaces/parasmech/Mlops main
+
